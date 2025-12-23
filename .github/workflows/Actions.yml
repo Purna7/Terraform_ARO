@@ -56,8 +56,9 @@ jobs:
           # PULL_SECRET: ${{ secrets.PULL_SECRET }}
         run: |
           terraform plan -lock=false \
-            -var-file="environments/${{ github.event.inputs.environment }}/terraform.tfvars" \
+            -var-file="terraform.tfvars" \
             -out=tfplan
+
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'

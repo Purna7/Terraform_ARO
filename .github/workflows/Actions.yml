@@ -55,7 +55,7 @@ jobs:
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
         run: |
           terraform plan -lock=false \
-            -var-file="New folder/terraform/terraform.tfvars" \
+            -var-file="terraform.tfvars" \
             -out=tfplan
 
       - name: Terraform Apply

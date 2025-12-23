@@ -53,12 +53,10 @@ jobs:
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-          # PULL_SECRET: ${{ secrets.PULL_SECRET }}
         run: |
           terraform plan -lock=false \
-            -var-file="terraform/terraform.tfvars" \
+            -var-file="terraform.tfvars" \
             -out=tfplan
-
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'

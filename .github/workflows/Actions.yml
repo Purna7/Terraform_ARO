@@ -56,7 +56,7 @@ jobs:
           # PULL_SECRET: ${{ secrets.PULL_SECRET }}
         run: |
           terraform plan -lock=false \
-            -var-file="terraform.tfvars" \
+            -var-file="terraform/terraform.tfvars" \
             -out=tfplan
 
 

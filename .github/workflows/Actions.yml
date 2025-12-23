@@ -56,7 +56,7 @@ jobs:
           # PULL_SECRET: ${{ secrets.PULL_SECRET }}
         run: |
           terraform plan -lock=false \
-            -var-file="environments/${{ github.event.inputs.environment }}/dev.auto.tfvars" \
+            -var-file="environments/${{ github.event.inputs.environment }}/terraform.tfvars" \
             -out=tfplan
 
       - name: Terraform Apply
